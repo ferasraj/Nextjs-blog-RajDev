@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: "Next.js App",
-    short_name: "Next.js App",
-    description: "Next.js App",
+    name: "Raj Dev Blog",
+    short_name: "Raj Dev Blog",
+    description: "A blog created with Next.js, Tailwind.css and contentlayer.",
     start_url: "/",
     display: "standalone",
     //   background_color: '#fff',

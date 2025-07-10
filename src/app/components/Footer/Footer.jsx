@@ -124,7 +124,7 @@ const Footer = () => {
           Made with{" "}
           <span className="text-red-500 text-xl font-bold">&hearts;</span> by{" "}
           <a
-            href="https://devdreaming.com"
+            href="https://nextjs-blog-raj-dev-gfm9.vercel.app"
             className="underline"
             target="_blank"
           >
