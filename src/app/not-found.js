@@ -23,7 +23,7 @@ export default function NotFound() {
         dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
         "
         >
-          Go To Home
+          Go To Home Page
         </Link>
       </div>
     </main>
