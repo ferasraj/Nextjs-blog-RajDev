@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   const categoryName = toCapitalizedName(params.slug);
 
   return {
-    title: `Best ${categoryName} Tutorials & Articles | My Blog`,
+    title: `Best ${categoryName} Tutorials & Articles | `,
     description: `Explore insightful blogs and tutorials on ${
       params.slug === "all" ? "web development" : categoryName
     }. Stay up to date with the latest in tech.`,
@@ -25,12 +25,12 @@ export async function generateMetadata({ params }) {
       canonical: "https://example.com/categories/web-development",
     },
     openGraph: {
-      title: `Best ${categoryName} Tutorials & Articles | My Blog`,
+      title: `Best ${categoryName} Tutorials & Articles | Raj Dev Blog`,
       description: `Explore insightful blogs and tutorials on ${
         params.slug === "all" ? "web development" : categoryName
       }. Stay up to date with the latest in tech.`,
       url: `${siteMetadata.siteUrl}/categories/${params.slug}`,
-      siteName: "My Blog",
+      siteName: "Raj Dev Blog",
       type: "website",
       images: [siteMetadata.socialBanner], // أو صورة ديناميكية
     },
