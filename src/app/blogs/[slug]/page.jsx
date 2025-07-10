@@ -72,19 +72,29 @@ export default function BlogPage({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": "BlogPosting",
     headline: blog.title,
     description: blog.description,
-    image: imageList,
+    image: imageList, // string أو string[] لرابط/روابط الصور
     datePublished: new Date(blog.publishedAt).toISOString(),
     dateModified: new Date(blog.updatedAt || blog.publishedAt).toISOString(),
-    author: [
-      {
-        "@type": "Person",
-        name: blog?.author ? [blog.author] : siteMetadata.author,
-        url: siteMetadata.twitter,
+    author: {
+      "@type": "Person",
+      name: blog?.author || siteMetadata.author,
+      url: siteMetadata.twitter,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Raj Dev Blog",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://nextjs-blog-raj-dev-gfm9.vercel.app/logo.png",
       },
-    ],
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteMetadata.siteUrl}/blogs/${blog.slug}`,
+    },
   };
 
   return (
@@ -117,17 +127,19 @@ export default function BlogPage({ params }) {
           </div>
 
           <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 dark:bg-dark/40" />
-          <Image
-            src={blog.image.filePath.replace("../public", "")}
-            placeholder="blur"
-            blurDataURL={blog.image.blurhashDataUrl}
-            alt={blog.title}
-            width={blog.image.width}
-            height={blog.image.height}
-            className="aspect-square w-full h-full object-cover object-center"
-            priority
-            sizes="100vw"
-          />
+          {blog.image?.filePath && (
+            <Image
+              src={blog.image.filePath.replace("../public", "")}
+              placeholder="blur"
+              blurDataURL={blog.image.blurhashDataUrl}
+              alt={blog.title}
+              width={blog.image.width}
+              height={blog.image.height}
+              className="aspect-square w-full h-full object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          )}
         </div>
         <BlogDetails blog={blog} slug={params.slug} />
         <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
