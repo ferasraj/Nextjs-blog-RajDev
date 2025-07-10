@@ -5,6 +5,9 @@ const nextConfig = {
   compiler: {
     removeConsole: true,
   },
+  experimental: {
+    appDir: true, // 👈 هذا اللي ناقص
+  },
 };
 
 module.exports = withContentlayer({ ...nextConfig });
