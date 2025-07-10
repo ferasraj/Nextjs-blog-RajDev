@@ -26,6 +26,7 @@ export const metadata = {
     default: siteMetadata.title, // a default is required when creating a template
   },
   description: siteMetadata.description,
+
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
