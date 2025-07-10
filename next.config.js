@@ -8,6 +8,7 @@ const nextConfig = {
   experimental: {
     appDir: true, // 👈 هذا اللي ناقص
   },
+  swcMinify: true,
 };
 
 module.exports = withContentlayer({ ...nextConfig });
