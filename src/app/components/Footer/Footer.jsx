@@ -114,12 +114,15 @@ const Footer = () => {
         <span className="text-center dark:font-semibold">
           &copy;2025 RajDev. All rights reserved.
         </span>
-        <Link
-          href="https://nextjs-blog-raj-dev-gfm9.vercel.app/sitemap.xml"
+        <a
+          href="/sitemap.xml"
           className="text-center underline my-4 md:my-0 dark:font-semibold"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           sitemap.xml
-        </Link>
+        </a>
+
         <div className="text-center dark:font-semibold">
           Made with{" "}
           <span className="text-red-500 text-xl font-bold">&hearts;</span> by{" "}
