@@ -115,7 +115,7 @@ const Footer = () => {
           &copy;2025 RajDev. All rights reserved.
         </span>
         <Link
-          href="/sitemap.xml"
+          href="https://nextjs-blog-raj-dev-gfm9.vercel.app/sitemap.xml"
           className="text-center underline my-4 md:my-0 dark:font-semibold"
         >
           sitemap.xml
