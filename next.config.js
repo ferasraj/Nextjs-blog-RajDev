@@ -6,9 +6,22 @@ const nextConfig = {
     removeConsole: true,
   },
   experimental: {
-    appDir: true, // 👈 هذا اللي ناقص
+    // appDir: true, // 👈 هذا اللي ناقص
   },
   swcMinify: true,
+  async headers() {
+    return [
+      {
+        source: "/:path*.xml",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/xml; charset=utf-8",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = withContentlayer({ ...nextConfig });
